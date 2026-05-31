@@ -1,0 +1,25 @@
+<div [class]="{
+    'overlay': true,
+    'hidden': !store.isOpen()
+    }">
+    <div [class]="{
+    'modal': true,
+    'hidden': !store.isOpen()
+    }">
+        <button (click)="store.onClose()" class="btn--close-modal">&times;</button>
+        <h2 class="modal__header">
+            Open your bank account<br/>
+            in just <span class="highlight">5 minutes</span>
+        </h2>
+        <form class="modal__form">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name">
+            <label for="email">Email Address</label>
+            <input type="email" id="email">
+
+            <button type="submit" class="btn">Next step &rarr;</button>
+        </form>
+    </div>
+</div>

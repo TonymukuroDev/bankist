@@ -1,0 +1,32 @@
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex-center($direction: row) {
+    display: flex;
+    @if ($direction == column) {
+        flex-direction: $direction;
+    }
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between($direction: row) {
+    display: flex;
+    @if ($direction == column) {
+        flex-direction: $direction;
+    }
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin vertical-padding($value) {
+    padding-top: $value;
+    padding-bottom: $value;
+}
+
+@mixin horizontal-padding($value) {
+    padding-left: $value;
+    padding-right: $value;
+}

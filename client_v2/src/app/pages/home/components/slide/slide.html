@@ -1,0 +1,17 @@
+<div class="slide" [style]="{
+    'transform': `translateX(${100 * (slideIndex() - currentSlide())}%)`,
+    'transition': 'transform 0.5s ease',
+    'position': slideIndex() === 0 ? 'relative' : 'absolute',
+    'top': 0,
+    'width': '100%'
+}">
+    <div class="testimonial">
+        <h5 class="testimonial__header">{{slide().header}}</h5>
+        <blockquote class="testimonial__text">{{slide().text}}</blockquote>
+        <address class="testimonial__author">
+            <img [src]="author().photo" alt="" class="testimonial__photo" />
+            <h6 class="testimonial__name">{{author().name}}</h6>
+            <p class="testimonial__location">{{author().location}}</p>
+        </address>
+    </div>
+</div>

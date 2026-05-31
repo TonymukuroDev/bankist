@@ -1,0 +1,11 @@
+<nav #nav class="nav" [class.sticky]="isSticky()">
+    <img src="/images/logo.png" alt="Bankist logo" class="nav__logo">
+    <ul class="nav__links">
+        <li (click)="scroller.scrollTo('features')" class="nav__link">Features</li>
+        <li (click)="scroller.scrollTo('operations')" class="nav__link">Operations</li>
+        <li (click)="scroller.scrollTo('testimonials')" class="nav__link">Testimonials</li>
+        <li class="nav__link">
+            <button (click)="store.onOpen()" class="btn--show-modal">Open account</button>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,28 @@
+<section [class]="sectionClasses()" appRevealSection appScrollerTarget="testimonials">
+    <div class="section__title">
+        <h2 class="section__description">Not sure yet?</h2>
+        <h3 class="section__header">
+            Millions of Bankists are already making their lifes simpler.
+        </h3>
+    </div>
+    <div class="slider">
+        @for (slideData of slidesData; track $index) {
+            <app-slide
+            [slide]="slideData"
+            [slideIndex]="$index"
+            [currentSlide]="currentSlide()"
+            />
+        }
+        <button (click)="prevSlide()" class="slider__btn slider__btn--left">&larr;</button>
+        <button (click)="nextSlide()" class="slider__btn slider__btn--right">&rarr;</button>
+        <div class="dots">
+            @for (slideData of slidesData; track $index) {
+                <button type="button" (click)="gotToSlide($index)" [class]="{
+                    'dots__dot': true,
+                    'dots__dot--active': currentSlide() === $index 
+                    }"
+                ></button>
+            }
+        </div>
+    </div>
+</section>
